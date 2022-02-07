@@ -77,7 +77,7 @@
 
 - name: create service instance
   ansible.builtin.import_role:
-    name: robertdebock.service
+    name: buluma.service
   vars:
     service_list:
       - name: "{{ instance.name | default(tomcat_name) }}"

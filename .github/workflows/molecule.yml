@@ -13,7 +13,8 @@ on:
       - '*'
   pull_request:
   schedule:
-    - cron: '39 20 20 * *'
+    - cron: '39 7,20 10,20 * *'
+  workflow_dispatch:
 
 jobs:
   lint:

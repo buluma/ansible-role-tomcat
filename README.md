@@ -2,9 +2,9 @@
 
 Install and configure tomcat on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-tomcat/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-tomcat/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-tomcat/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-tomcat)|[![quality](https://img.shields.io/ansible/quality/57966)](https://galaxy.ansible.com/buluma/tomcat)|[![downloads](https://img.shields.io/ansible/role/d/57966)](https://galaxy.ansible.com/buluma/tomcat)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/releases/)|
+|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|---------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-tomcat/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-tomcat/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-tomcat/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-tomcat)|[![quality](https://img.shields.io/ansible/quality/57966)](https://galaxy.ansible.com/buluma/tomcat)|[![downloads](https://img.shields.io/ansible/role/d/57966)](https://galaxy.ansible.com/buluma/tomcat)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -17,15 +17,15 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   gather_facts: yes
 
   vars:
-    # tomcat_address: "127.0.0.1"
+    tomcat_address: "127.0.0.1"
     tomcat_instances:
-      - name: "tomcat"
-      # - name: "tomcat-version-7"
-      #   version: 7
-      #   shutdown_port: 8007
-      #   non_ssl_connector_port: 8082
-      #   ssl_connector_port: 8445
-      #   ajp_port: 8011
+      # - name: "tomcat"
+      - name: "tomcat-version-7"
+        version: 7
+        shutdown_port: 8007
+        non_ssl_connector_port: 8082
+        ssl_connector_port: 8445
+        ajp_port: 8011
       # - name: "tomcat-version-8"
       #   version: 8
       #   shutdown_port: 8008
@@ -103,11 +103,35 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
   hosts: all
   become: yes
   gather_facts: no
+  vars:
+    _service_test_command:
+      default: /usr/bin/sleep
+      Alpine: /bin/sleep
+      Debian: /bin/sleep
+      Ubuntu-16: /bin/sleep
+      Ubuntu-18: /bin/sleep
+    service_test_command: "{{ _service_test_command[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_service_test_command[ansible_os_family] | default(_service_test_command['default'])) }}"  # noqa 204 Just long.
 
   roles:
     - role: buluma.bootstrap
     - role: buluma.core_dependencies
     - role: buluma.java
+    - role: buluma.service
+      service_list:
+        - name: tomcat
+          description: Tomcat application server
+          start_command: "{{ service_test_command }} 3600"
+          state: started
+          enabled: yes
+          type: forking
+          restart_mode: "always"
+        - name: tomcat
+          description: Tomcat application server
+          start_command: "{{ service_test_command }} 3601"
+          state: stopped
+          enabled: no
+          type: forking
+          restart_mode: "always"
 ```
 
 
@@ -263,6 +287,10 @@ This role [refers to a version](https://github.com/buluma/ansible-role-tomcat/bl
 This version reference means a role may get outdated. Monthly tests occur to see if [bit-rot](https://en.wikipedia.org/wiki/Software_rot) occured. If you however find a problem, please create an issue, I'll get on it as soon as possible.
 
 If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-tomcat/issues)
+
+## [Changelog](#changelog)
+
+[Role History](https://github.com/buluma/ansible-role-tomcat/blob/master/CHANGELOG.md)
 
 ## [License](#license)
 

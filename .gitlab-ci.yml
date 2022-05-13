@@ -9,10 +9,10 @@ variables:
   PY_COLORS: 1
 
 molecule:
+  stage: build
+  allow_failure: true
   script:
     - image=${image} tag=${tag} molecule test
-  rules:
-    - if: $CI_COMMIT_REF_NAME == "main"
   retry: 1
   parallel:
     matrix:
@@ -20,13 +20,15 @@ molecule:
         tag: "latest"
       - image: "debian-systemd"
         tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "35"
       - image: "fedora-systemd"
-        tag: "rawhide"
-      - image: "opensuse"
+        tag: "latest"
+      - image: "docker-opensuse-systemd"
         tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "latest"
@@ -34,8 +36,12 @@ molecule:
         tag: "bionic"
       - image: "docker-ubuntu-systemd"
         tag: "focal"
+      - image: "docker-ubuntu-systemd"
+        tag: "jammy"
 
 testing:
+  stage: test
+  needs: []
   script:
     - image=${image} tag=${tag} molecule test
   rules:
@@ -47,40 +53,15 @@ testing:
         tag: "latest"
       - image: "debian-systemd"
         tag: "latest"
-      - image: "fedora-systemd"
-        tag: "34"
-      - image: "fedora-systemd"
-        tag: "latest"
-      - image: "fedora-systemd"
-        tag: "rawhide"
-      - image: "opensuse"
-        tag: "latest"
-      - image: "docker-ubuntu-systemd"
-        tag: "latest"
-      - image: "docker-ubuntu-systemd"
-        tag: "bionic"
-      - image: "docker-ubuntu-systemd"
-        tag: "focal"
-
-role_testing:
-  script:
-    - image=${image} tag=${tag} ansible-galaxy install buluma.tomcat
-  rules:
-    - if: $CI_COMMIT_REF_NAME == "testing"
-  retry: 1
-  parallel:
-    matrix:
-      - image: "enterpriselinux"
-        tag: "latest"
       - image: "debian-systemd"
-        tag: "latest"
+        tag: "bookworm"
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "35"
       - image: "fedora-systemd"
-        tag: "rawhide"
-      - image: "opensuse"
+        tag: "latest"
+      - image: "docker-opensuse-systemd"
         tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "latest"
@@ -88,12 +69,18 @@ role_testing:
         tag: "bionic"
       - image: "docker-ubuntu-systemd"
         tag: "focal"
+      - image: "docker-ubuntu-systemd"
+        tag: "jammy"
 
 galaxy:
+  stage: deploy
+  needs: []
   script:
     - ansible-galaxy role info buluma.tomcat
 
-role_testing_live:
+role_testing:
+  stage: test
+  needs: []
   script:
     - image=${image} tag=${tag} ansible-galaxy install buluma.tomcat
   retry: 1
@@ -103,13 +90,15 @@ role_testing_live:
         tag: "latest"
       - image: "debian-systemd"
         tag: "latest"
+      - image: "debian-systemd"
+        tag: "bookworm"
       - image: "fedora-systemd"
         tag: "34"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "35"
       - image: "fedora-systemd"
-        tag: "rawhide"
-      - image: "opensuse"
+        tag: "latest"
+      - image: "docker-opensuse-systemd"
         tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "latest"
@@ -117,6 +106,8 @@ role_testing_live:
         tag: "bionic"
       - image: "docker-ubuntu-systemd"
         tag: "focal"
+      - image: "docker-ubuntu-systemd"
+        tag: "jammy"
 
 release_job:
   stage: .post

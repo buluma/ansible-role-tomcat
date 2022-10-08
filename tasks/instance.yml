@@ -41,7 +41,7 @@
   ansible.builtin.set_fact:
     instance_name: "{{ instance.name }}"
 
-- name: configure tomcat instance - server.xml
+- name: Configure tomcat instance - server.xml
   ansible.builtin.template:
     src: server.xml.j2
     dest: "{{ tomcat_directory }}/{{ instance.name }}/conf/server.xml"

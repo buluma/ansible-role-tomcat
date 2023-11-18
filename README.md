@@ -1,10 +1,10 @@
-# [tomcat](#tomcat)
+# [Ansible role tomcat](#tomcat)
 
 Install and configure tomcat on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-tomcat/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-tomcat/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-tomcat/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-tomcat)|[![quality](https://img.shields.io/ansible/quality/57966)](https://galaxy.ansible.com/buluma/tomcat)|[![downloads](https://img.shields.io/ansible/role/d/57966)](https://galaxy.ansible.com/buluma/tomcat)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-tomcat/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-tomcat/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-tomcat/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-tomcat)|[![downloads](https://img.shields.io/ansible/role/d/4861)](https://galaxy.ansible.com/buluma/tomcat)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 

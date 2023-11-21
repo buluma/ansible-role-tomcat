@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-tomcat/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/1.0.10...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#14](https://github.com/buluma/ansible-role-tomcat/issues/14)
+- Update action [\#13](https://github.com/buluma/ansible-role-tomcat/issues/13)
+
 ## [1.0.10](https://github.com/buluma/ansible-role-tomcat/tree/1.0.10) (2022-08-09)
 
 [Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/1.0.9...1.0.10)

@@ -1,10 +1,10 @@
-# [Ansible role tomcat](#tomcat)
+# Ansible role [tomcat](https://galaxy.ansible.com/ui/standalone/roles/buluma/tomcat/documentation)
 
 Install and configure tomcat on your system.
 
-|GitHub|Version|Issues|Pull Requests|
-|------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-tomcat/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-tomcat/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-tomcat/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-tomcat/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-tomcat.svg)](https://github.com/buluma/ansible-role-tomcat/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/tomcat)](https://galaxy.ansible.com/ui/standalone/roles/buluma/tomcat/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -255,13 +255,11 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[Apache-2.0](https://github.com/buluma/ansible-role-tomcat/blob/master/LICENSE).
+[Apache-2.0](https://github.com/buluma/ansible-role-tomcat/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-
-### [Special Thanks](#special-thanks)
 
 Template inspired by [Robert de Bock](https://github.com/robertdebock)

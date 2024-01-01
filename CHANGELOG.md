@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-tomcat/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/2.0.0...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#17](https://github.com/buluma/ansible-role-tomcat/issues/17)
+
 ## [2.0.0](https://github.com/buluma/ansible-role-tomcat/tree/2.0.0) (2023-12-25)
 
 [Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/1.0.10...2.0.0)
@@ -28,6 +36,7 @@
 **Merged pull requests:**
 
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.3 to 1.0.4 [\#6](https://github.com/buluma/ansible-role-tomcat/pull/6) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Test Role install [\#2](https://github.com/buluma/ansible-role-tomcat/pull/2) ([buluma](https://github.com/buluma))
 
 ## [1.0.7](https://github.com/buluma/ansible-role-tomcat/tree/1.0.7) (2022-03-20)
 
@@ -60,10 +69,6 @@
 ## [1.0.2](https://github.com/buluma/ansible-role-tomcat/tree/1.0.2) (2022-02-11)
 
 [Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/1.0.1...1.0.2)
-
-**Merged pull requests:**
-
-- Test Role install [\#2](https://github.com/buluma/ansible-role-tomcat/pull/2) ([buluma](https://github.com/buluma))
 
 ## [1.0.1](https://github.com/buluma/ansible-role-tomcat/tree/1.0.1) (2022-02-07)
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-tomcat/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/2.1.0...HEAD)
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 3 to 4 [\#19](https://github.com/buluma/ansible-role-tomcat/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#18](https://github.com/buluma/ansible-role-tomcat/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [2.1.0](https://github.com/buluma/ansible-role-tomcat/tree/2.1.0) (2024-01-02)
 
 [Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/2.0.0...2.1.0)

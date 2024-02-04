@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-tomcat/tree/HEAD)
+## [2.2.0](https://github.com/buluma/ansible-role-tomcat/tree/2.2.0) (2024-01-20)
 
-[Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/2.1.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/2.1.0...2.2.0)
 
 **Merged pull requests:**
 
+- Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#21](https://github.com/buluma/ansible-role-tomcat/pull/21) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 3 to 4 [\#19](https://github.com/buluma/ansible-role-tomcat/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.5 to 1.0.8 [\#18](https://github.com/buluma/ansible-role-tomcat/pull/18) ([dependabot[bot]](https://github.com/apps/dependabot))
 
@@ -36,7 +37,6 @@
 
 **Merged pull requests:**
 
-- Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#21](https://github.com/buluma/ansible-role-tomcat/pull/21) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.4 to 1.0.5 [\#7](https://github.com/buluma/ansible-role-tomcat/pull/7) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.0.8](https://github.com/buluma/ansible-role-tomcat/tree/1.0.8) (2022-03-28)

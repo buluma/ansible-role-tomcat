@@ -1,8 +1,8 @@
 ---
 - name: Verify
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   vars:
     _netcat_package:
@@ -23,12 +23,12 @@
     - name: Let netcat listen on port 127.0.0.2:8080
       ansible.builtin.shell:
         cmd: nc --listen --keep-open 127.0.0.2 8080 &
-      changed_when: no
+      changed_when: false
 
     - name: See if sensitive information is not exposed
       ansible.builtin.uri:
         url: "http://localhost:8080/"
-        return_content: yes
+        return_content: true
       register: this
       failed_when:
         - "'successfully installed Tomcat' in this.content"

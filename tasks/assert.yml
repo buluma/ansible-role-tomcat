@@ -5,42 +5,42 @@
     that:
       - tomcat_version7 is defined
       - tomcat_version7 is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_version8 is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_version8 is defined
       - tomcat_version8 is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_version9 is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_version9 is defined
       - tomcat_version9 is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_mirror is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_mirror is defined
       - tomcat_mirror is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_name is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_name is defined
       - tomcat_name is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_directory is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_directory is defined
       - tomcat_directory is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_version is set correctly
   ansible.builtin.assert:
@@ -48,35 +48,35 @@
       - tomcat_version is defined
       - tomcat_version is number
       - tomcat_version in [ 7, 8, 9 ]
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_user is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_user is defined
       - tomcat_user is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_group is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_group is defined
       - tomcat_group is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_xms is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_xms is defined
       - tomcat_xms is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_xmx is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_xmx is defined
       - tomcat_xmx is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_non_ssl_connector_port is set correctly
   ansible.builtin.assert:
@@ -85,7 +85,7 @@
       - tomcat_non_ssl_connector_port is number
       - tomcat_non_ssl_connector_port >= -1
       - tomcat_non_ssl_connector_port < 65536
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_ssl_connector_port is set correctly
   ansible.builtin.assert:
@@ -94,7 +94,7 @@
       - tomcat_ssl_connector_port is number
       - tomcat_ssl_connector_port >= -1
       - tomcat_ssl_connector_port < 65536
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_shutdown_port is set correctly
   ansible.builtin.assert:
@@ -103,14 +103,14 @@
       - tomcat_shutdown_port is number
       - tomcat_shutdown_port >= -1
       - tomcat_shutdown_port < 65536
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_ajp_enabled is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_ajp_enabled is defined
       - tomcat_ajp_enabled is boolean
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_ajp_port is set correctly
   ansible.builtin.assert:
@@ -119,7 +119,7 @@
       - tomcat_ajp_port is number
       - tomcat_ajp_port >= -1
       - tomcat_ajp_port < 65536
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if port collisions occur is set correctly
   ansible.builtin.assert:
@@ -130,56 +130,56 @@
       - tomcat_ssl_connector_port != tomcat_shutdown_port
       - tomcat_ssl_connector_port != tomcat_ajp_port
       - tomcat_shutdown_port != tomcat_ajp_port
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_jre_home is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_jre_home is defined
       - tomcat_jre_home is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_service_state is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_service_state is defined
       - tomcat_service_state in [ "reloaded", "restarted", "started", "stopped" ]
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_service_enabled is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_service_enabled is defined
       - tomcat_service_enabled is boolean
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_instances is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_instances is defined
       - tomcat_instances is iterable
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_address is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_address is defined
       - tomcat_address is string
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_access_log_enabled is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_access_log_enabled is defined
       - tomcat_access_log_enabled is boolean
-    quiet: yes
+    quiet: true
 
 - name: assert | Test if tomcat_access_log_directory is set correctly
   ansible.builtin.assert:
     that:
       - tomcat_access_log_directory is defined
       - tomcat_access_log_directory is string
-    quiet: yes
+    quiet: true
   when:
     - tomcat_access_log_enabled
 
@@ -188,7 +188,7 @@
     that:
       - tomcat_access_log_prefix is defined
       - tomcat_access_log_prefix is string
-    quiet: yes
+    quiet: true
   when:
     - tomcat_access_log_enabled
 
@@ -197,7 +197,7 @@
     that:
       - tomcat_access_log_suffix is defined
       - tomcat_access_log_suffix is string
-    quiet: yes
+    quiet: true
   when:
     - tomcat_access_log_enabled
 
@@ -206,7 +206,7 @@
     that:
       - tomcat_access_log_pattern is defined
       - tomcat_access_log_pattern is string
-    quiet: yes
+    quiet: true
   when:
     - tomcat_access_log_enabled
 
@@ -217,7 +217,7 @@
       - item.name is string
       - item.name is match("^[a-zA-Z0-9_-]*$")
     fail_msg: "Please use alphanumeric characters only."
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -228,7 +228,7 @@
       - item.version is defined
       - item.version is number
       - item.version in [7, 8, 9]
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -241,7 +241,7 @@
       - item.non_ssl_connector_port is number
       - item.non_ssl_connector_port >= -1
       - item.non_ssl_connector_port < 65536
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -254,7 +254,7 @@
       - item.ssl_connector_port is number
       - item.ssl_connector_port >= -1
       - item.ssl_connector_port < 65536
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -267,7 +267,7 @@
       - item.shutdown_port is number
       - item.shutdown_port >= -1
       - item.shutdown_port < 65536
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -278,7 +278,7 @@
   ansible.builtin.assert:
     that:
       - item.ajp_enabled is boolean
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -291,7 +291,7 @@
       - item.ajp_port is number
       - item.ajp_port >= -1
       - item.ajp_port < 65536
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -303,7 +303,7 @@
     that:
       - item.address is defined
       - item.address is string
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -314,7 +314,7 @@
   ansible.builtin.assert:
     that:
       - item.java_opts is iterable
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -325,7 +325,7 @@
   ansible.builtin.assert:
     that:
       - item.access_log_enabled is boolean
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -336,7 +336,7 @@
   ansible.builtin.assert:
     that:
       - item.access_log_directory is string
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -347,7 +347,7 @@
   ansible.builtin.assert:
     that:
       - item.access_log_prefix is string
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -358,7 +358,7 @@
   ansible.builtin.assert:
     that:
       - item.access_log_suffix is string
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -369,7 +369,7 @@
   ansible.builtin.assert:
     that:
       - item.access_log_pattern is string
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -380,7 +380,7 @@
   ansible.builtin.assert:
     that:
       - item.config_files is iterable
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -391,7 +391,7 @@
   ansible.builtin.assert:
     that:
       - item.service_state in [ "reloaded", "restarted", "started", "stopped" ]
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -402,7 +402,7 @@
   ansible.builtin.assert:
     that:
       - item.service_enabled is boolean
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -415,7 +415,7 @@
       - item.packet_size is number
       - item.packet_size > 0
       - item.packet_size <= 65536
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"
@@ -427,7 +427,7 @@
     that:
       - item.ajp_secret is string
       - item.ajp_secret | length > 0
-    quiet: yes
+    quiet: true
   loop: "{{ tomcat_instances }}"
   loop_control:
     label: "{{ item.name }}"

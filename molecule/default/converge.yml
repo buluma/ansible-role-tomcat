@@ -26,6 +26,12 @@
       #   non_ssl_connector_port: 8084
       #   ssl_connector_port: 8447
       #   ajp_port: 8013
+      # - name: "tomcat-version-10"
+      #   version: 10
+      #   shutdown_port: 8019
+      #   non_ssl_connector_port: 8084
+      #   ssl_connector_port: 8447
+      #   ajp_port: 8013
       # - name: "tomcat-specific"
       #   user: "specificuser"
       #   group: "specificgroup"

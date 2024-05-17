@@ -39,6 +39,12 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
       #   non_ssl_connector_port: 8084
       #   ssl_connector_port: 8447
       #   ajp_port: 8013
+      # - name: "tomcat-version-10"
+      #   version: 10
+      #   shutdown_port: 8019
+      #   non_ssl_connector_port: 8084
+      #   ssl_connector_port: 8447
+      #   ajp_port: 8013
       # - name: "tomcat-specific"
       #   user: "specificuser"
       #   group: "specificgroup"
@@ -187,8 +193,9 @@ tomcat_instances:
 
 # The explicit version to use when referring to the short name.
 tomcat_version7: "7.0.109"
-tomcat_version8: "8.5.73"
-tomcat_version9: "9.0.55"
+tomcat_version8: "8.5.100"
+tomcat_version9: "9.0.87"
+tomcat_version10: "10.1.20"
 
 # The location where to download Apache Tomcat from.
 tomcat_mirror: "https://archive.apache.org"
@@ -202,6 +209,8 @@ _tomcat_unarchive_urls:
     url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-8/v{{ tomcat_version8 }}/bin/apache-tomcat-{{ tomcat_version8 }}.tar.gz"
   9:
     url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-9/v{{ tomcat_version9 }}/bin/apache-tomcat-{{ tomcat_version9 }}.tar.gz"
+  10:
+    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-10/v{{ tomcat_version10 }}/bin/apache-tomcat-{{ tomcat_version10 }}.tar.gz"
 
 tomcat_unarchive_url: "{{ _tomcat_unarchive_urls[tomcat_version].url }}"
 ```
@@ -235,7 +244,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8|
+|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8, 9|
 |[Debian](https://hub.docker.com/r/buluma/debian)|all|
 |[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
 |[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|

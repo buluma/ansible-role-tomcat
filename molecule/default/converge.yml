@@ -87,4 +87,4 @@
       #       mode: "0644"
 
   roles:
-    - role: ansible-role-tomcat
+    - role: buluma.tomcat

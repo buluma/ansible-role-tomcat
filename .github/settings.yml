@@ -5,4 +5,4 @@
 repository:
   description: Install and configure tomcat on your system.
   homepage: https://buluma.github.io/
-  topics: tomcat, ansible, molecule, tox, playbook
+  topics: tomcat, ansible, molecule, playbook

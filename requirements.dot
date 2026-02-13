@@ -1,0 +1,15 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "tomcat" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.bootstrap" [fillcolor=green style=filled]
+    "buluma.core_dependencies" [fillcolor=green style=filled]
+    "buluma.java" [fillcolor=green style=filled]
+    "buluma.service" [fillcolor=green style=filled]
+  }
+  "tomcat" -> "buluma.bootstrap"
+  "tomcat" -> "buluma.core_dependencies"
+  "tomcat" -> "buluma.java"
+  "tomcat" -> "buluma.service"
+}

@@ -4,6 +4,11 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/24.3.31...HEAD)
 
+**Closed issues:**
+
+- Update action [\#16](https://github.com/buluma/ansible-role-tomcat/issues/16)
+- rebuild action [\#15](https://github.com/buluma/ansible-role-tomcat/issues/15)
+
 **Merged pull requests:**
 
 - Bump ansible/ansible-lint from 24.7.0 to 24.9.0 [\#27](https://github.com/buluma/ansible-role-tomcat/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))

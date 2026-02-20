@@ -1,0 +1,1 @@
+ansible-role-tomcat [generator]: ERROR: Unhandled exception when retrieving 'DEFAULT_LOCAL_TMP': [Errno 1] Operation not permitted: '/Users/shadowwalker/.ansible/tmp/ansible-local-87710hihzh4vt'

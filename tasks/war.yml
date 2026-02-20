@@ -1,5 +1,4 @@
 ---
-
 - name: war | Deploy war url
   ansible.builtin.get_url:
     url: "{{ war.url }}"

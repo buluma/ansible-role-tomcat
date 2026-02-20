@@ -1,5 +1,4 @@
 ---
-
 - name: instance | Ensure instance group exists
   ansible.builtin.group:
     name: "{{ instance.group | default(tomcat_group) }}"

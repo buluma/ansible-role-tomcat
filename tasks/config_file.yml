@@ -1,5 +1,4 @@
 ---
-
 - name: config_file | Deploy config_file
   ansible.builtin.template:
     src: "{{ config_file.src }}"

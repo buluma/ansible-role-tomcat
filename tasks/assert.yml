@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test if tomcat_version7 is set correctly
   ansible.builtin.assert:
     that:

@@ -1,10 +1,12 @@
 ---
+dependencies: []
 galaxy_info:
   author: buluma
-  role_name: tomcat
-  description: Install and configure tomcat on your system.
-  license: Apache-2.0
   company: none
+  description: Install and configure tomcat on your system.
+  galaxy_tags:
+    - tomcat
+  license: Apache-2.0
   min_ansible_version: "2.12"
   platforms:
     - name: EL
@@ -22,6 +24,4 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-  galaxy_tags:
-    - tomcat
-dependencies: []
+  role_name: tomcat

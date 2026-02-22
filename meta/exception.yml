@@ -1,8 +1,8 @@
 ---
 exceptions:
-  - variation: amazonlinux:1
-    reason: "Not idempotent."
-  - variation: alpine
-    reason: "Restart fails."
-  - variation: debian:bookworm
-    reason: "Package 'netcat' has false installation candidate"
+  - reason: Not idempotent.
+    variation: amazonlinux:1
+  - reason: Restart fails.
+    variation: alpine
+  - reason: Package 'netcat' has false installation candidate
+    variation: debian:bookworm

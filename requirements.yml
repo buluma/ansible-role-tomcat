@@ -1,7 +1,6 @@
----
+collections: null
 roles:
-  - name: buluma.bootstrap
-  - name: buluma.core_dependencies
-  - name: buluma.java
-  - name: buluma.service
-collections:
+- name: buluma.bootstrap
+- name: buluma.core_dependencies
+- name: buluma.java
+- name: buluma.service

@@ -1,40 +1,36 @@
----
-- name: Verify
-  hosts: all
-  become: true
+- become: true
   gather_facts: true
-
+  handlers:
+  - ansible.builtin.package:
+      name: '{{ netcat_package }}'
+      state: absent
+    name: Uninstall netcat
+  hosts: all
+  name: Verify
+  tasks:
+  - ansible.builtin.package:
+      name: '{{ netcat_package }}'
+      state: present
+    name: Install netcat
+    notify:
+    - Uninstall netcat
+  - ansible.builtin.shell:
+      cmd: nc --listen --keep-open 127.0.0.2 8080 &
+    changed_when: false
+    name: Let netcat listen on port 127.0.0.2:8080
+  - ansible.builtin.uri:
+      return_content: true
+      url: http://localhost:8080/
+    failed_when:
+    - '''successfully installed Tomcat'' in this.content'
+    name: See if sensitive information is not exposed
+    register: this
   vars:
     _netcat_package:
+      Alpine: netcat-openbsd
+      Debian: netcat-openbsd
+      Suse: netcat-openbsd
       default: nc
-      Alpine: &netcat_openbsd netcat-openbsd
-      Debian: *netcat_openbsd
-      Suse: *netcat_openbsd
-    netcat_package: "{{ _netcat_package[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default (_netcat_package[ansible_os_family] | default(_netcat_package['default'])) }}"
-
-  tasks:
-    - name: Install netcat
-      ansible.builtin.package:
-        name: "{{ netcat_package }}"
-        state: present
-      notify:
-        - Uninstall netcat
-
-    - name: Let netcat listen on port 127.0.0.2:8080
-      ansible.builtin.shell:
-        cmd: nc --listen --keep-open 127.0.0.2 8080 &
-      changed_when: false
-
-    - name: See if sensitive information is not exposed
-      ansible.builtin.uri:
-        url: "http://localhost:8080/"
-        return_content: true
-      register: this
-      failed_when:
-        - "'successfully installed Tomcat' in this.content"
-
-  handlers:
-    - name: Uninstall netcat
-      ansible.builtin.package:
-        name: "{{ netcat_package }}"
-        state: absent
+    netcat_package: '{{ _netcat_package[ansible_os_family ~ ''-'' ~ ansible_distribution_major_version]
+      | default (_netcat_package[ansible_os_family] | default(_netcat_package[''default'']))
+      }}'

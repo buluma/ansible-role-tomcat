@@ -12,29 +12,29 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - become: true
-    gather_facts: true
-    hosts: all
-    name: Converge
-    roles:
-      - role: buluma.tomcat
-    vars:
-      tomcat_instances:
-        - name: tomcat
+- become: true
+  gather_facts: true
+  hosts: all
+  name: Converge
+  roles:
+  - role: buluma.tomcat
+  vars:
+    tomcat_instances:
+    - name: tomcat
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-tomcat/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - become: true
-    gather_facts: false
-    hosts: all
-    name: Prepare
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.core_dependencies
-      - role: buluma.java
+- become: true
+  gather_facts: false
+  hosts: all
+  name: Prepare
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.core_dependencies
+  - role: buluma.java
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -70,29 +70,29 @@ tomcat_ajp_secret: SoMe-SeCrEt
 tomcat_directory: /opt
 tomcat_group: tomcat
 tomcat_instances:
-  - access_log_directory: "{{ tomcat_access_log_directory }}"
-    access_log_enabled: "{{ tomcat_access_log_enabled }}"
-    access_log_pattern: "{{ tomcat_access_log_pattern }}"
-    access_log_prefix: "{{ tomcat_access_log_prefix }}"
-    access_log_suffix: "{{ tomcat_access_log_suffix }}"
-    ajp_enabled: "{{ tomcat_ajp_enabled }}"
-    ajp_port: "{{ tomcat_ajp_port }}"
-    ajp_secret: "{{ tomcat_ajp_secret }}"
-    group: "{{ tomcat_group }}"
-    java_opts:
-      - name: JRE_HOME
-        value: "{{ tomcat_jre_home }}"
-    name: "{{ tomcat_name }}"
-    non_ssl_connector_port: "{{ tomcat_non_ssl_connector_port }}"
-    packet_size: 8192
-    service_enabled: "{{ tomcat_service_enabled }}"
-    service_state: "{{ tomcat_service_state }}"
-    shutdown_port: "{{ tomcat_shutdown_port }}"
-    ssl_connector_port: "{{ tomcat_ssl_connector_port }}"
-    user: "{{ tomcat_user }}"
-    version: "{{ tomcat_version }}"
-    xms: "{{ tomcat_xms }}"
-    xmx: "{{ tomcat_xmx }}"
+- access_log_directory: "{{ tomcat_access_log_directory }}"
+  access_log_enabled: "{{ tomcat_access_log_enabled }}"
+  access_log_pattern: "{{ tomcat_access_log_pattern }}"
+  access_log_prefix: "{{ tomcat_access_log_prefix }}"
+  access_log_suffix: "{{ tomcat_access_log_suffix }}"
+  ajp_enabled: "{{ tomcat_ajp_enabled }}"
+  ajp_port: "{{ tomcat_ajp_port }}"
+  ajp_secret: "{{ tomcat_ajp_secret }}"
+  group: "{{ tomcat_group }}"
+  java_opts:
+  - name: JRE_HOME
+    value: "{{ tomcat_jre_home }}"
+  name: "{{ tomcat_name }}"
+  non_ssl_connector_port: "{{ tomcat_non_ssl_connector_port }}"
+  packet_size: 8192
+  service_enabled: "{{ tomcat_service_enabled }}"
+  service_state: "{{ tomcat_service_state }}"
+  shutdown_port: "{{ tomcat_shutdown_port }}"
+  ssl_connector_port: "{{ tomcat_ssl_connector_port }}"
+  user: "{{ tomcat_user }}"
+  version: "{{ tomcat_version }}"
+  xms: "{{ tomcat_xms }}"
+  xmx: "{{ tomcat_xmx }}"
 tomcat_jre_home: /usr
 tomcat_mirror: https://archive.apache.org
 tomcat_name: tomcat

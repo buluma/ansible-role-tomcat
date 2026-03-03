@@ -47,17 +47,13 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 ---
 _tomcat_unarchive_urls:
   7:
-    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-7/v{{ tomcat_version7 }}/bin/apache-tomcat-{{
-      tomcat_version7 }}.tar.gz"
+    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-7/v{{ tomcat_version7 }}/bin/apache-tomcat-{{ tomcat_version7 }}.tar.gz"
   8:
-    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-8/v{{ tomcat_version8 }}/bin/apache-tomcat-{{
-      tomcat_version8 }}.tar.gz"
+    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-8/v{{ tomcat_version8 }}/bin/apache-tomcat-{{ tomcat_version8 }}.tar.gz"
   9:
-    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-9/v{{ tomcat_version9 }}/bin/apache-tomcat-{{
-      tomcat_version9 }}.tar.gz"
+    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-9/v{{ tomcat_version9 }}/bin/apache-tomcat-{{ tomcat_version9 }}.tar.gz"
   10:
-    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-10/v{{ tomcat_version10 }}/bin/apache-tomcat-{{
-      tomcat_version10 }}.tar.gz"
+    url: "{{ tomcat_mirror }}/dist/tomcat/tomcat-10/v{{ tomcat_version10 }}/bin/apache-tomcat-{{ tomcat_version10 }}.tar.gz"
 tomcat_access_log_directory: logs
 tomcat_access_log_enabled: true
 tomcat_access_log_pattern: "%h %l %u %t &quot;%r&quot; %s %b"
@@ -70,29 +66,29 @@ tomcat_ajp_secret: SoMe-SeCrEt
 tomcat_directory: /opt
 tomcat_group: tomcat
 tomcat_instances:
-- access_log_directory: "{{ tomcat_access_log_directory }}"
-  access_log_enabled: "{{ tomcat_access_log_enabled }}"
-  access_log_pattern: "{{ tomcat_access_log_pattern }}"
-  access_log_prefix: "{{ tomcat_access_log_prefix }}"
-  access_log_suffix: "{{ tomcat_access_log_suffix }}"
-  ajp_enabled: "{{ tomcat_ajp_enabled }}"
-  ajp_port: "{{ tomcat_ajp_port }}"
-  ajp_secret: "{{ tomcat_ajp_secret }}"
-  group: "{{ tomcat_group }}"
-  java_opts:
-  - name: JRE_HOME
-    value: "{{ tomcat_jre_home }}"
-  name: "{{ tomcat_name }}"
-  non_ssl_connector_port: "{{ tomcat_non_ssl_connector_port }}"
-  packet_size: 8192
-  service_enabled: "{{ tomcat_service_enabled }}"
-  service_state: "{{ tomcat_service_state }}"
-  shutdown_port: "{{ tomcat_shutdown_port }}"
-  ssl_connector_port: "{{ tomcat_ssl_connector_port }}"
-  user: "{{ tomcat_user }}"
-  version: "{{ tomcat_version }}"
-  xms: "{{ tomcat_xms }}"
-  xmx: "{{ tomcat_xmx }}"
+  - access_log_directory: "{{ tomcat_access_log_directory }}"
+    access_log_enabled: "{{ tomcat_access_log_enabled }}"
+    access_log_pattern: "{{ tomcat_access_log_pattern }}"
+    access_log_prefix: "{{ tomcat_access_log_prefix }}"
+    access_log_suffix: "{{ tomcat_access_log_suffix }}"
+    ajp_enabled: "{{ tomcat_ajp_enabled }}"
+    ajp_port: "{{ tomcat_ajp_port }}"
+    ajp_secret: "{{ tomcat_ajp_secret }}"
+    group: "{{ tomcat_group }}"
+    java_opts:
+      - name: JRE_HOME
+        value: "{{ tomcat_jre_home }}"
+    name: "{{ tomcat_name }}"
+    non_ssl_connector_port: "{{ tomcat_non_ssl_connector_port }}"
+    packet_size: 8192
+    service_enabled: "{{ tomcat_service_enabled }}"
+    service_state: "{{ tomcat_service_state }}"
+    shutdown_port: "{{ tomcat_shutdown_port }}"
+    ssl_connector_port: "{{ tomcat_ssl_connector_port }}"
+    user: "{{ tomcat_user }}"
+    version: "{{ tomcat_version }}"
+    xms: "{{ tomcat_xms }}"
+    xmx: "{{ tomcat_xmx }}"
 tomcat_jre_home: /usr
 tomcat_mirror: https://archive.apache.org
 tomcat_name: tomcat
@@ -162,3 +158,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+

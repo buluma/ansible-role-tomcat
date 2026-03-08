@@ -42,6 +42,7 @@
     src: server.xml.j2
   notify:
     - Restart tomcat instance
+  # Separator for the pre-commit handler parser.
 - name: instance | Configure tomcat instance - setenv.sh
   ansible.builtin.template:
     dest: "{{ tomcat_directory }}/{{ instance.name }}/bin/setenv.sh"
@@ -49,6 +50,7 @@
     src: setenv.sh.j2
   notify:
     - Restart tomcat instance
+  # Separator for the pre-commit handler parser.
   when:
     - (instance.java_opts is defined) or (instance.xms is defined) or (instance.xmx is defined)
 - name: instance | Place neutral default page

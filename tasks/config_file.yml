@@ -8,3 +8,4 @@
     src: "{{ config_file.src }}"
   notify:
     - Restart tomcat instance
+  # Separator for the pre-commit handler parser.

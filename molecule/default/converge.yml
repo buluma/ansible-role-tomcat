@@ -4,7 +4,7 @@
   hosts: all
   name: Converge
   roles:
-  - role: buluma.tomcat
+    - role: buluma.tomcat
   vars:
     tomcat_instances:
-    - name: tomcat
+      - name: tomcat

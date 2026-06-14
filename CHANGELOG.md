@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-tomcat/tree/HEAD)
+## [26.6.0](https://github.com/buluma/ansible-role-tomcat/tree/26.6.0) (2026-06-14)
 
-[Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/24.3.31...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-tomcat/compare/24.3.31...26.6.0)
 
 **Closed issues:**
 
@@ -11,6 +11,8 @@
 
 **Merged pull requests:**
 
+- Bump docker/setup-buildx-action from 3 to 4 [\#31](https://github.com/buluma/ansible-role-tomcat/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 4 to 6 [\#29](https://github.com/buluma/ansible-role-tomcat/pull/29) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible/ansible-lint from 24.7.0 to 24.9.0 [\#27](https://github.com/buluma/ansible-role-tomcat/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [24.3.31](https://github.com/buluma/ansible-role-tomcat/tree/24.3.31) (2024-03-31)

@@ -42,7 +42,7 @@
     src: server.xml.j2
   notify:
     - Restart tomcat instance
-  # Separator for the pre-commit handler parser.
+# Separator for the pre-commit handler parser.
 - name: instance | Configure tomcat instance - setenv.sh
   ansible.builtin.template:
     dest: "{{ tomcat_directory }}/{{ instance.name }}/bin/setenv.sh"

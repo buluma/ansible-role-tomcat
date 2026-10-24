@@ -130,11 +130,11 @@ tomcat_shutdown_port: 8005
 tomcat_ssl_connector_port: 8443
 tomcat_unarchive_url: "{{ _tomcat_unarchive_urls[tomcat_version].url }}"
 tomcat_user: tomcat
-tomcat_version: 8
-tomcat_version10: "10.1.20"
+tomcat_version: 9
+tomcat_version10: "10.1.61"
 tomcat_version7: "7.0.109"
 tomcat_version8: "8.5.100"
-tomcat_version9: "9.0.87"
+tomcat_version9: "9.0.123"
 tomcat_xms: 512M
 tomcat_xmx: 1024M
 ```
@@ -188,3 +188,5 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
+The default now selects supported Tomcat 9.0.123, preserving the Java EE `javax.*` application API. Tomcat 10.1.61 is available with `tomcat_version: 10` and requires Java 11+ plus Jakarta-compatible applications. Explicit Tomcat 7/8 overrides remain for legacy callers; those release lines are unsupported. Existing extracted installations are guarded by their bin directory and require a separate upgrade deployment.

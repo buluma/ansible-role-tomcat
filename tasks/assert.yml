@@ -41,7 +41,7 @@
     that:
       - tomcat_version is defined
       - tomcat_version is number
-      - tomcat_version in [ 7, 8, 9 ]
+      - tomcat_version in [ 7, 8, 9, 10 ]
 - name: assert | Test if tomcat_user is set correctly
   ansible.builtin.assert:
     quiet: true

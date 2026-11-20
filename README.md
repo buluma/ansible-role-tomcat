@@ -134,7 +134,7 @@ tomcat_version: 9
 tomcat_version10: "10.1.61"
 tomcat_version7: "7.0.109"
 tomcat_version8: "8.5.100"
-tomcat_version9: "9.0.123"
+tomcat_version9: "9.0.124"
 tomcat_xms: 512M
 tomcat_xmx: 1024M
 ```

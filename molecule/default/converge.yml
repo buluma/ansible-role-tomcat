@@ -8,3 +8,15 @@
   vars:
     tomcat_instances:
       - name: tomcat
+      - name: tomcat10
+        version: 10
+        non_ssl_connector_port: 8081
+        ssl_connector_port: 8444
+        shutdown_port: 8006
+        ajp_port: 8010
+      - name: tomcat11
+        version: 11
+        non_ssl_connector_port: 8082
+        ssl_connector_port: 8445
+        shutdown_port: 8007
+        ajp_port: 8011

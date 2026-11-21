@@ -37,3 +37,5 @@
     - role: buluma.bootstrap
     - role: buluma.core_dependencies
     - role: buluma.java
+      # Tomcat 11 needs Java 17+; EL9's buluma.java default is 11.
+      java_version: "{{ [java_default_version | int, 17] | max }}"

@@ -26,6 +26,18 @@
         - "'successfully installed Tomcat' in this.content"
       name: See if sensitive information is not exposed
       register: this
+    - ansible.builtin.uri:
+        return_content: true
+        url: http://localhost:{{ item }}/
+      delay: 3
+      loop:
+        - 8081
+        - 8082
+      name: See if the Tomcat 10.1 and 11 instances serve the neutral page
+      register: this
+      retries: 10
+      until:
+        - "'Please select an application' in (this.content | default(''))"
   vars:
     _netcat_package:
       Alpine: netcat-openbsd

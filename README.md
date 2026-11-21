@@ -147,7 +147,7 @@ tomcat_ssl_connector_port: 8443
 tomcat_unarchive_url: "{{ _tomcat_unarchive_urls[tomcat_version].url }}"
 tomcat_user: tomcat
 tomcat_version: 9
-tomcat_version10: "10.1.61"
+tomcat_version10: "10.1.62"
 tomcat_version11: "11.0.29"
 tomcat_version7: "7.0.109"
 tomcat_version8: "8.5.100"
@@ -206,4 +206,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-The default now selects supported Tomcat 9.0.124, preserving the Java EE `javax.*` application API and running on Java 8+. Tomcat 10.1.61 is available with `tomcat_version: 10` and requires Java 11+; Tomcat 11.0.29 is available with `tomcat_version: 11` and requires Java 17+. Both use the Jakarta EE `jakarta.*` namespace, so existing `javax.*` applications must be migrated before they run. Each entry in `tomcat_instances` can pick its own major with `version`, so one host can run Tomcat 9, 10.1 and 11 side by side on distinct ports. This role does not install Java: provide a suitable runtime (for example with `buluma.java`) and point `tomcat_jre_home` or the instance `JRE_HOME` at it. Explicit Tomcat 7/8 overrides remain for legacy callers; those release lines are unsupported. Existing extracted installations are guarded by their bin directory and require a separate upgrade deployment.
+The default now selects supported Tomcat 9.0.124, preserving the Java EE `javax.*` application API and running on Java 8+. Tomcat 10.1.62 is available with `tomcat_version: 10` and requires Java 11+; Tomcat 11.0.29 is available with `tomcat_version: 11` and requires Java 17+. Both use the Jakarta EE `jakarta.*` namespace, so existing `javax.*` applications must be migrated before they run. Each entry in `tomcat_instances` can pick its own major with `version`, so one host can run Tomcat 9, 10.1 and 11 side by side on distinct ports. This role does not install Java: provide a suitable runtime (for example with `buluma.java`) and point `tomcat_jre_home` or the instance `JRE_HOME` at it. Explicit Tomcat 7/8 overrides remain for legacy callers; those release lines are unsupported. Existing extracted installations are guarded by their bin directory and require a separate upgrade deployment.
